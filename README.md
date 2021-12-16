@@ -1,9 +1,6 @@
 # ITF-log4shell-vulnapp
 log4j (CVE-2021-44228) Spring-boot web application with vulnerabilities
 ## Installation & Usage
-
----
-
 ```bash
 # requierd JDK version is 8 or 7 (openJDK 1.8 or 1.7)
 $ git clone https://github.com/Auddn/ITF-log4shell-vulnapp.git
