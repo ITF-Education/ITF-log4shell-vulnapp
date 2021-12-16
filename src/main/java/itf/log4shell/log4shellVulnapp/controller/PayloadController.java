@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 public class PayloadController {
     private static final Logger logger = LogManager.getLogger("vulnapp");
 
-    @GetMapping("/")
-    public String testPayload(HttpServletRequest req) {
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public String PostPayload(HttpServletRequest req) {
         logger.info("payload: " + req.getParameter("payload"));
         return "ITF said hi!";
     }
