@@ -13,6 +13,7 @@ public class PayloadController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public String PostPayload(HttpServletRequest req) {
+        System.out.println("\nPayload=" + req.getParameter("payload") + "\n");
         logger.info("payload: " + req.getParameter("payload"));
         return "ITF said hi!";
     }
