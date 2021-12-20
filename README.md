@@ -1,6 +1,6 @@
 # ☕ ITF-log4shell-vulnapp
 
-log4j (CVE-2021-44228) Spring-boot web application with vulnerabilities
+Spring-boot web application with log4shell(CVE-2021-44228) vulnerabilities
 
 ## Installation
 
