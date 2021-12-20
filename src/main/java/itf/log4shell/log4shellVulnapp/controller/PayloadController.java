@@ -21,8 +21,8 @@ public class PayloadController {
     }
 
     @PostMapping()
-    public String PostPayload(@RequestBody PayloadParams payloadParams) {
-        logger.info("(POST|Body)payload= " + payloadParams.getPayload());
+    public String PostPayload(HttpServletRequest req) {
+        logger.info("(POST|Body)payload=" + req.getParameter("payload"));
         return "(POST)ITF said h1!";
     }
 
