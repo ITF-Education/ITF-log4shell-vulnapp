@@ -34,7 +34,7 @@ $ echo $JAVA_HOME
 /usr/lib/jvm/java-8-openjdk-amd64
 ```
 
-## Usage
+## Setting & Execute
 
 This web application operates based on the Spring-Boot framework and has Tomcat built-in.
 
@@ -58,5 +58,7 @@ and add or edit port setting (default port number is 8080):
 server.port = 8080
 ```
 
+## Vulnerabilities test
+
 In order to test for log4j vulnerabilities in this application, the payload must be inserted as follows:
-![ex_screenshot](./img/ITF-log4shell-vulnapp-Usage1.png)
+![ex_screenshot](./img/ITF-log4shell-vulnapp-VulnTest.png)
