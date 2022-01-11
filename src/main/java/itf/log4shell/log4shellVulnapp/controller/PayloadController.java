@@ -17,9 +17,7 @@ public class PayloadController {
     public String GetPayload(
             @RequestHeader("User-Agent")String UserAgent
     ) {
-        for(Field field : UserAgent.getClass().getFields()){
-            logger.info("(GET|Header)User-Agent: " + field.getName());
-        }
+        logger.info("(GET|Header)User-Agent: " + UserAgent.getClass().getName());
         return "(GET)ITF said h1!";
     }
 
