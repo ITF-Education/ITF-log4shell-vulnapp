@@ -2,14 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
     <title>Sign in | ITF-log4shell-vulnapp</title>
 </head>
 <body>
 <div class="container justify-content-center">
     <div class="card mt-5">
         <div class="card-body">
-            <img src="/static/img/itf.jpg" style="width:100%">
+            <img src="@{/img/itf.jpg}" style="width:100%">
             <hr>
             <h3 class="card-title">Sign in</h3>
             <form action="/signin" method="post" class="form-group">
