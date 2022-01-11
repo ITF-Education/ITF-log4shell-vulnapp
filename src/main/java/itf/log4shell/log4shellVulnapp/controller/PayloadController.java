@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.Field;
 
 @RestController
 @RequestMapping(value = "remoteTest")
@@ -16,7 +17,9 @@ public class PayloadController {
     public String GetPayload(
             @RequestHeader("User-Agent")String UserAgent
     ) {
-        logger.info("(GET|Header)User-Agent: " + UserAgent);
+        for(Field field : UserAgent.getClass().getFields()){
+            logger.info("(GET|Header)User-Agent: " + field.getName());
+        }
         return "(GET)ITF said h1!";
     }
 
