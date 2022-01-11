@@ -12,14 +12,19 @@ import javax.servlet.http.HttpServletRequest;
 public class PayloadController {
     private static final Logger logger = LogManager.getLogger("vulnapp");
 
-    @GetMapping()
-    public String getMain(@) {
+    @GetMapping("")
+    public String index() {
         return "index";
     }
 
-    @PostMapping()
-    public String postMain(HttpServletRequest req) {
-        logger.info("(username: " + req.getParameter("username") + ")");
-        return "hello " + req.getParameter("username");
+    @GetMapping("/signin")
+    public String GetSigninPage() {
+        return "signin";
+    }
+
+    @PostMapping("/signin")
+    public String PostSigninPage(HttpServletRequest req) {
+        logger.info("Sign in request (username:" + req.getParameter("username") + ", password:" + req.getParameter("password") + ")");
+        return "signin";
     }
 }
