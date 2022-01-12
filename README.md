@@ -21,3 +21,4 @@ server.port = 8080
 ## Attack Point
 The controller uses log4j to output Username and password parameter values included in the POST request sent from the sign in page as logs.   
 You can attack by inserting and submitting JNDI phrases to username and password as follows.
+<img src="./image/signin1.png">
